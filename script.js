@@ -87,7 +87,7 @@ rainplay.addEventListener('click', () => {
         // contents.style.color = 'white'
     } else {
         audioF.pause()
-        rainplay.src = "assests/play-button-arrowhead.png"
+        rainplay.src = "play-button-arrowhead.png"
         document.body.style.background = "#c8e0da"
         contents.style.color = 'black'
     }
@@ -114,10 +114,10 @@ const sunplay = document.querySelector("#sunplay")
 sunplay.addEventListener('click', () => {
     if (audioS.paused) {
         audioS.play()
-        sunplay.src = "assests/pause.png"
+        sunplay.src = "pause.png"
     } else {
         audioS.pause()
-        sunplay.src = "assests/play-button-arrowhead.png"
+        sunplay.src = "play-button-arrowhead.png"
     }
 })
 
@@ -125,13 +125,13 @@ sunplay.addEventListener('click', () => {
 const keyplay = document.querySelector('#keyplay')
 const audioT = document.querySelector("#keyboardSound")
 
-keyplay.addEventListener('click' , ()=>{
-    if(audioT.paused){
+keyplay.addEventListener('click', () => {
+    if (audioT.paused) {
         audioT.play()
-        keyplay.src = "assests/pause.png"
-    } else{
+        keyplay.src = "pause.png"
+    } else {
         audioT.pause()
-        keyplay.src = "assests/play-button-arrowhead.png"
+        keyplay.src = "play-button-arrowhead.png"
     }
 })
 
@@ -139,28 +139,28 @@ keyplay.addEventListener('click' , ()=>{
 const turnplay = document.querySelector("#turnplay")
 const audioFour = document.querySelector("#turnsound")
 
-turnplay.addEventListener('click' , ()=>{
-    if(audioFour.paused){
+turnplay.addEventListener('click', () => {
+    if (audioFour.paused) {
         audioFour.play()
-        turnplay.src = 'assests/pause.png'
-    } else{
+        turnplay.src = 'pause.png'
+    } else {
         audioFour.pause()
-        turnplay.src = "assests/play-button-arrowhead.png"
-}
+        turnplay.src = "play-button-arrowhead.png"
+    }
 })
 
 const crackplay = document.querySelector("#crackplay")
 const audioFifth = document.querySelector("#cracksound")
 
-crackplay.addEventListener('click' , ()=>{
-    if(audioFifth.paused){
+crackplay.addEventListener('click', () => {
+    if (audioFifth.paused) {
         audioFifth.play()
-        crackplay.src = 'assests/pause.png'
-    } else{
+        crackplay.src = 'pause.png'
+    } else {
         audioFifth.pause()
-        crackplay.src = "assests/play-button-arrowhead.png"
+        crackplay.src = "play-button-arrowhead.png"
     }
-}) 
+})
 
 
 // darkmode
@@ -169,31 +169,31 @@ const soundContainers = document.querySelectorAll("#sound-container")
 
 
 
-btnTheme.addEventListener('click' , ()=>{
-   if(document.body.classList.contains("light-mode")){
-    document.body.classList.remove("light-mode")
-    document.body.classList.add("dark-mode")
-    btnTheme.textContent = "Lightmode"
-    contents.style.color = 'white'
-    btnTheme.style.backgroundColor = 'white'
-    btnTheme.style.color = 'black'
-    soundContainers.forEach(soundContainer=>{
-        soundContainer.style.backgroundColor = "#04aa6d"
-        
-    })
-   }else{
-    document.body.classList.remove("dark-mode")
-    document.body.classList.add("light-mode")
-    btnTheme.textContent = "Darkmode"
-    contents.style.color = 'black'
-    btnTheme.style.backgroundColor = '#14151a'
-    btnTheme.style.color = 'white'
-    soundContainers.forEach(soundContainer=>{
-        soundContainer.style.backgroundColor = "rgba(255, 255, 255, 0.5)"
-        
-    })
-   }
-}) 
+btnTheme.addEventListener('click', () => {
+    if (document.body.classList.contains("light-mode")) {
+        document.body.classList.remove("light-mode")
+        document.body.classList.add("dark-mode")
+        btnTheme.textContent = "Lightmode"
+        contents.style.color = 'white'
+        btnTheme.style.backgroundColor = 'white'
+        btnTheme.style.color = 'black'
+        soundContainers.forEach(soundContainer => {
+            soundContainer.style.backgroundColor = "#04aa6d"
+
+        })
+    } else {
+        document.body.classList.remove("dark-mode")
+        document.body.classList.add("light-mode")
+        btnTheme.textContent = "Darkmode"
+        contents.style.color = 'black'
+        btnTheme.style.backgroundColor = '#14151a'
+        btnTheme.style.color = 'white'
+        soundContainers.forEach(soundContainer => {
+            soundContainer.style.backgroundColor = "rgba(255, 255, 255, 0.5)"
+
+        })
+    }
+})
 
 
 let stopParent = document.getElementById('stop-container')
@@ -208,18 +208,18 @@ const StopAll = `
 </div>
 `
 
-document.body.insertAdjacentHTML('beforeend' , StopAll)
+document.body.insertAdjacentHTML('beforeend', StopAll)
 
-const checkBox =document.getElementById('stopCheckbox');
+const checkBox = document.getElementById('stopCheckbox');
 
 
 
-checkBox.addEventListener('change' , ()=>{
-    if(checkBox.checked){
-        audios.forEach(audio=>{
+checkBox.addEventListener('change', () => {
+    if (checkBox.checked) {
+        audios.forEach(audio => {
             audio.pause()
             audio.currentTime = 0;
-            location.reload() 
+            location.reload()
         })
-    } 
+    }
 })
